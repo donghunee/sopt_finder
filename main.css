@@ -1,0 +1,72 @@
+body {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+}
+
+input {
+  width: 180px;
+  height: 20px;
+}
+
+form {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+a {
+  color: blanchedalmond;
+  text-decoration: none;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  margin: 20px auto;
+}
+
+#search img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+#card_wrap {
+  width: 500px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: flex;
+  color: white;
+  padding: 10px;
+}
+
+#card_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+#card_avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#repos {
+  width: 300px;
+  height: auto;
+}
