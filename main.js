@@ -3,7 +3,7 @@ const API_URL = "https://api.github.com/users/";
 const form = document.getElementById("form"),
   input = document.getElementById("form_input"),
   main = document.getElementById("result");
-
+toggle = document.getElementById("toggle");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputValue = input.value;
@@ -17,6 +17,8 @@ function addRepoLink(reposData) {
   const card_repos = document.getElementById("card_repos");
   reposData.slice(0, 10).forEach((repo) => {
     const repoLink = document.createElement("a");
+    repoLink.classList.add("repoLink");
+    repoLink.classList.add("change");
     repoLink.href = repo.html_url;
     repoLink.innerText = repo.name;
     card_repos.appendChild(repoLink);
@@ -26,7 +28,7 @@ function addRepoLink(reposData) {
 
 function createResultCard(userData) {
   const cardHTML = `
-        <div id="card_wrap">
+        <div id="card_wrap" class="change">
             <div id="card_image">
                 <img id="card_avatar" src=${userData.avatar_url}>
             </div>
@@ -60,3 +62,17 @@ async function getUserData(userName) {
   createResultCard(result);
   getReposData(result);
 }
+
+const onToggle = () => {
+  const changeList = document.getElementsByClassName("change");
+
+  for (let i = 0; i < changeList.length; i++) {
+    if (toggle.checked) {
+      changeList[i].classList.add("white");
+    } else {
+      changeList[i].classList.remove("white");
+    }
+  }
+};
+
+toggle.addEventListener("click", (event) => setTimeout(onToggle(), 0));
